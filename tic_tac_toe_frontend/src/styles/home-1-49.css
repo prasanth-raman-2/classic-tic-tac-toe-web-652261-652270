@@ -1,0 +1,120 @@
+.container {
+    min-height: 100vh;
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-1);
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-lighter);
+    border-radius: var(--radius-md);
+    padding: 8px 16px;
+    margin-right: 16px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-family: var(--font-inter);
+    font-size: var(--text-base);
+    color: var(--color-dark);
+}
+
+.search-bar input::placeholder {
+    color: var(--color-gray);
+}
+
+.search-icon,
+.settings-icon {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.search-icon img,
+.settings-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.bottom-nav {
+    background-color: var(--color-white);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 19px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-item.active {
+    position: relative;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-red);
+    border-radius: 50%;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 16px;
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+}
